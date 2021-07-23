@@ -4,35 +4,23 @@ import "./App.css"
 
 
 const App = () => {
-    const [items, setItems] = useState([]);
-    const [name, setName] = useState([]);
+    const [items, setItems] = useState([{item:"",name:""}]);
     const [newItem, setNewItem] = useState("");
     const [newName, setNewName] = useState("");
 
-    const addItem = (ev) => {
-        ev.preventDefault();
-        if (newItem !== "") {
-            setItems([...items, newItem]);
-            setNewItem("");
-        }
-    };
-    const addName = (ev) => {
-        ev.preventDefault();
-        if (newName !== "") {
-            setName([...name, newName]);
-            setNewName("");
-        }
-    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setItems([...items,{item: newItem, name: newName}]);
+    }
     return (
 
         <body className="color">
             <div className="app" >
                 <h1>Feedback Fish</h1>
                 <br /><br /><br />
-                <form onSubmit={(e) => {addItem(e); addName(e)}}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                     <div>
                         <label htmlFor="new-item">REQUEST A FEATURE
-                         
                             <br />
                             <input onChange={(ev)=>setNewItem(ev.target.value)} id="new-item" value={newItem} label="What's on your mind" />
                             
@@ -46,13 +34,11 @@ const App = () => {
                         </label>
                     </div>
                     <br />
-
-
                     <input className="button" type="submit" value="Add"/>
                 </form><br /><br /><br />
 
-                <List listItems={items} setItems={setItems} />
-                <ul>{name}</ul>
+                <List listItems={items}/>
+                {/* <ul>{name}</ul> */}
             </div>
         </body>
     );
