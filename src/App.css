@@ -1,0 +1,28 @@
+.color{
+  background-color: #1d1a1b; 
+  color: white;  
+  padding-left: 100px;  
+  padding-top: 30px; padding-right: 100px; /* padding-bottom: 20 % ; */
+  padding-bottom: 20%;
+  
+  /* padding: 50%; */
+  }
+  
+input{
+  background-color: rgb(66, 59, 59);
+  border-radius: 5px; width: 40%; 
+  height: 30px;
+  color: white;
+  }
+  
+.button{
+  background-color: #3EBA59; color: white;
+  border-radius: 5px;
+  width: 10%;
+  height: 35px;
+  } 
+label{
+  font-size: 15px;
+  font-family: inherit;
+  color: white;
+  }
